@@ -1,0 +1,44 @@
+html {
+    background-color: black;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+    /* overflow: hidden; */
+}
+
+div.star_img {
+    /* height: calc(5vw + 5vh); */
+    height: calc(5vh + 5vw);
+    width: calc(5vh + 5vw);
+    display: block;
+    position: fixed;
+    border-radius: 50%;
+    box-shadow: 0 0 1vw 1vh black inset;
+    transition: opacity 2s;
+    /* border: 1px solid yellow; */
+    /* border-bottom: 1px solid yellow; */
+    /* transform-origin: center center; */
+    /* top: 50vh; */
+    /* left: 40vw; */
+    /* transform-origin: left top; */
+    /* animation: ani_test 4s linear infinite; */
+}
+
+/* @keyframes ani_test {
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+} */
+
+h1 {
+    height: 50vh;
+    width: 50vw;
+    border: 1px solid blue;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
