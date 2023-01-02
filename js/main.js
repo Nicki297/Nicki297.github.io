@@ -1,21 +1,4 @@
 "use strict";
-// let t = 1000;
-// let i = 1;
-// let currend_star = document.getElementById("star_0")
-
-// function randomTick() {
-//     setTimeout(() => {
-//         t = Math.random() * 5000;
-//         // console.log(`Delay: ${t}`);
-//         let newStar = currend_star.cloneNode(true);
-//         newStar.id = "star_" + i;
-//         currend_star.before(newStar);
-//         currend_star = newStar;
-//         ++i;
-//         randomTick();  // set up the next tick
-//     }, t);
-// }
-// randomTick();      // start the first tick
 
 let img_list = [
     "https://upload.wikimedia.org/wikipedia/commons/9/95/New_shot_of_Proxima_Centauri%2C_our_nearest_neighbour.jpg",
@@ -42,6 +25,9 @@ function create_star() {
 }
 
 let t = 1000;
+let t2 = 2000;
+let t3 = 5000;
+
 function create_star_rnd() {
     setTimeout(() => {
         create_star();
@@ -50,18 +36,28 @@ function create_star_rnd() {
     },t)
 }
 
-let t2 = 2000;
-
 function remove_rnd_star() {
     setInterval(() => {
         if (star_list.length>10) {
-            star_list[~~(Math.random()*star_list.length)].style.opacity = 0;
-            star_list[~~(Math.random()*star_list.length)].remove();
+            let i = ~~(Math.random()*star_list.length)
+            star_list[i].style.opacity = 0;
         }
     }, t2)  
 }
 
+function clear_star_list() {
+    setInterval(() => {
+        star_list.forEach((el, i) => {
+            if (el.style["opacity"] == 0){
+                el.remove();
+                star_list.splice(i,1);
+            }
+        });
+
+    }, t3);
+
+}
+
 create_star_rnd();
 remove_rnd_star();
-
-// setInterval(( => {remove_star()},2000))
+clear_star_list();

@@ -33,12 +33,3 @@ div.star_img {
     75% {transform: rotate(270deg);}
     100% {transform: rotate(360deg);}
 } */
-
-h1 {
-    height: 50vh;
-    width: 50vw;
-    border: 1px solid blue;
-    color: white;
-    margin: 0;
-    text-align: center;
-}
